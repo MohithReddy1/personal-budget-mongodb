@@ -17,11 +17,11 @@
             "budget": 80
         },
         {
-            "title": "Transportation",
+            "title": "Bus",
             "budget": 50
         },
         {
-            "title": "Entertainment",
+            "title": "Movies",
             "budget": 60
         },
         {
@@ -29,8 +29,8 @@
             "budget": 75
         },
         {
-            "title": "Food",
-            "budget": 50
+            "title": "Clothes",
+            "budget": 150
         }
     ]
 }
