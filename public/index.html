@@ -119,7 +119,7 @@
             <article class="text-box">
                 <h1>D3JSChart</h1>
                 <p>
-                    <div id="d3Chart"></div>
+                <div id="d3Chart"></div>
                 </p>
             </article>
 
@@ -146,15 +146,7 @@
                 {
                     data: [],
                     backgroundColor: [
-                        '#ffcd56',
-                        '#ff6384',
-                        '#36a2eb',
-                        '#fd6b19',
-                        '#9b59b6',
-                        '#1abc9c',
-                        '#2ecc71',
-                        '#34495e',
-                    ],
+                    ]
                 }
             ],
             labels: []
@@ -172,10 +164,10 @@
             axios.get(' http://localhost:3000/budget')
                 .then(function (res) {
                     console.log(res.data);
-                    for (var i = 0; i < res.data.myBudget.length; i++) {
-                        dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
-                        dataSource.labels[i] = res.data.myBudget[i].title;
-                    }
+                    dataSource.labels = res.data.map(value => value.title);
+                    dataSource.datasets[0].data = res.data.map(value => value.budget);
+                    dataSource.datasets[0].backgroundColor = res.data.map(value => value.color);
+                    
                     createChart();
                     createD3Chart();
                 });
